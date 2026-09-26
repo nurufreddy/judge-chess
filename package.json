@@ -1,0 +1,21 @@
+{
+  "name": "judge-chess",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:web": "npm run dev --workspace=@judge-chess/web",
+    "dev:server": "npm run dev --workspace=@judge-chess/server",
+    "build:shared": "npm run build --workspace=@judge-chess/shared",
+    "build:web": "npm run build --workspace=@judge-chess/web",
+    "build:server": "npm run build --workspace=@judge-chess/server",
+    "build": "npm run build:shared && npm run build:server && npm run build:web",
+    "test": "npm run test --workspace=@judge-chess/server"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  }
+}
